@@ -16,12 +16,14 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('type')->constrained('post_types');
+            $table->foreignId('status')->constrained('post_statuses');
+            $table->string('author');
             $table->string('title');
-            $table->string('type')->nullable();
             $table->text('content');
-            $table->string('post_excerpt')->nullable();
+            $table->text('post_excerpt')->nullable();
             $table->dateTime('schedule')->nullable();
-            $table->integer('status')->default(0);
+            $table->integer('point')->nullable();
             $table->timestamps();
         });
     }

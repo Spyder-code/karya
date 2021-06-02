@@ -1,0 +1,21 @@
+{
+  "name": "funbahasa-landingpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tailwindcss-cli@latest build tailwind.css -o style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arifrahmanfauzi/funbahasa-landingpage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arifrahmanfauzi/funbahasa-landingpage/issues"
+  },
+  "homepage": "https://github.com/arifrahmanfauzi/funbahasa-landingpage#readme"
+}

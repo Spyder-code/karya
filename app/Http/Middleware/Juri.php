@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class Panel
+class Juri
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class Panel
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check()&&Auth::user()->role=='panel') {
+        if (Auth::check()&&Auth::user()->role==2) {
             return $next($request);
         } else {
             Auth::logout();

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EventPost;
 use App\Models\Post;
+use App\Models\PostCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,24 +47,41 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
-            'user_id' => 'required',
+            'author' => 'required',
+            'content' => 'required',
             'title' => 'required',
             'type' => 'required',
             'post_excerpt' => 'required',
+            'kategori' =>'required'
         ]);
 
-        Post::create([
+        $post = Post::create([
             'user_id' => Auth::id(),
-            'title' => $request->title,
             'type' => $request->type,
+            'status' => 1,
+            'author' => $request->author,
+            'title' => $request->title,
+            'content' => $request->content,
             'post_excerpt' => $request->post_excerpt,
-            'schedule' => $request->schedule,
-            'status' => 0,
         ]);
 
-        return back();
+        for ($i=0; $i < count($request->kategori); $i++) {
+            PostCategory::create([
+                'post_id' => $post->id,
+                'category_id' => $request->kategori[$i],
+            ]);
+        }
+
+        $eve = intval($request->event);
+        if ($request->type=='1') {
+            EventPost::create([
+                'event_id' => $eve,
+                'post_id' => $post->id
+            ]);
+        };
+
+        return back()->with('success','Post created!');
     }
 
     /**
@@ -97,22 +116,61 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $request->validate([
-            'user_id' => 'required',
+            'author' => 'required',
+            'content' => 'required',
             'title' => 'required',
             'type' => 'required',
             'post_excerpt' => 'required',
         ]);
 
-        $post->id::update([
-            'user_id' => Auth::id(),
+        Post::find($post->id)->update([
             'title' => $request->title,
             'type' => $request->type,
             'post_excerpt' => $request->post_excerpt,
-            'schedule' => $request->schedule,
-            'status' => 0,
+            'author' => $request->author,
+            'content' => $request->content,
         ]);
 
-        return back();
+        return back()->with('success','Post updated!');
+    }
+
+    public function updateStatus(Post $post, Request $request)
+    {
+        Post::find($post->id)->update([
+            'status' => $request->status,
+        ]);
+
+        return back()->with('success','status changed!');
+    }
+
+    public function updateSchedule(Post $post, Request $request)
+    {
+        $tipe = $request->tipe;
+        $now = date("Y-m-d H:i:s");
+        if ($tipe=='0') {
+            return back()->with('danger','Publish cant be null!');
+        } elseif($tipe=='1') {
+            Post::find($post->id)->update([
+                'status' => 5,
+                'schedule' => $now
+            ]);
+        } elseif($tipe=='2'){
+            Post::find($post->id)->update([
+                'status' => 4,
+                'schedule' => $request->schedule
+            ]);
+        }
+        
+        return back()->with('success','Post publish has updated!');
+    }
+
+    public function updatePoint(Post $post, Request $request)
+    {
+        Post::find($post->id)->update([
+            'point' => $request->point,
+        ]);
+
+        return back()->with('success','point changed!');
     }
 
     /**
@@ -124,6 +182,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         Post::destroy($post->id);
-        return back();
+        return back()->with('success','Post deleted!');
     }
 }

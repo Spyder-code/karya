@@ -11,10 +11,28 @@ class Post extends Model
 
     protected $fillable = [
         'user_id',
+        'author',
+        'content',
         'title',
         'type',
         'post_excerpt',
         'schedule',
         'status',
+        'point'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function postStatus()
+    {
+        return $this->belongsTo(PostStatus::class,'status');
+    }
+
+    public function typePost()
+    {
+        return $this->belongsTo(PostType::class,'type');
+    }
 }
