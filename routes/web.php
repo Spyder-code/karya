@@ -34,6 +34,9 @@ Route::get('/read-post',  'HomeController@read')->name('user.baca-karya');
 Route::get('/read-post/{id}',  'HomeController@readDetail')->name('user.baca-karya.detail');
 Route::get('/tentang-kami',  'HomeController@tentangKami')->name('user.tentang-kami');
 Route::get('/unggah-karya',  'HomeController@unggahKarya')->name('user.unggah-karya');
+Route::get('/category-puisi',  'HomeController@categoryPuisi')->name('user.category-puisi');
+Route::get('/category-artikel',  'HomeController@categoryArtikel')->name('user.category-artikel');
+Route::get('/category-cerpen',  'HomeController@categoryCerpen')->name('user.category-cerpen');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin','phone']], function(){
     Route::get('/home',  'AdminController@index')->name('home.admin');

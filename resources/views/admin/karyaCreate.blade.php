@@ -24,11 +24,10 @@
         </div>
         <div class="col-5 align-self-center">
             <div class="customize-input float-right">
-                <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                    <option selected>Aug 19</option>
-                    <option value="1">July 19</option>
-                    <option value="2">Jun 19</option>
-                </select>
+                <div
+                    class="custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
+                    <?php echo date("M d"); ?>
+                </div>
             </div>
         </div>
     </div>
@@ -133,7 +132,7 @@
         });
 
     $('#event').hide();
-    $('#tipe').change(function (e) { 
+    $('#tipe').change(function (e) {
         e.preventDefault();
         var val = $(this).val();
         if(val==1){

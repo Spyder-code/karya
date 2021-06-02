@@ -51,18 +51,7 @@
             <div class="pb-5">
                 <ul class="flex justify-center">
                     <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">1</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">2</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">3</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="flex items-center font-bold" href="#">
-                            <span class="mx-3">Next</span>
-                        </a>
+                        {{$data->links()}}
                     </li>
                 </ul>
             </div>

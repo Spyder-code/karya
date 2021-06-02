@@ -51,7 +51,7 @@ class HomeController extends Controller
                 ->join('categories','categories.id','=','post_categories.category_id')
                 ->select('posts.*','categories.name as kategori','post_categories.id as id_post')
                 ->where('posts.status',5)
-                ->get();
+                ->paginate(1);
         return view('user.read',compact('data'));
     }
 
@@ -62,7 +62,19 @@ class HomeController extends Controller
                 ->select('posts.*','categories.name as kategori')
                 ->where('post_categories.id',$id)
                 ->first();
-        return view('user.detailPost',compact('post'));
+
+        $a = PostCategory::select('post_categories.category_id')
+            ->where('post_categories.id',$id)
+            ->first();
+
+        if($a->category_id == 3){
+            return view('user.detailPost',compact('post'));
+        } else if ($a->category_id == 2){
+            return view('user.detailPostCerpen',compact('post'));
+        } else {
+            return view('user.detailPostPuisi',compact('post'));
+        }
+
     }
 
     public function unggahKarya()
@@ -73,5 +85,38 @@ class HomeController extends Controller
     public function tentangKami()
     {
         return view('user.tentangKami');
+    }
+
+    public function categoryPuisi()
+    {
+        $data = PostCategory::join('posts','posts.id','=','post_categories.post_id')
+                ->join('categories','categories.id','=','post_categories.category_id')
+                ->select('posts.*','categories.name as kategori','post_categories.id as id_post')
+                ->where('post_categories.category_id',1)
+                ->get();
+
+        return view('user.categoryPuisi',compact('data'));
+    }
+
+    public function categoryArtikel()
+    {
+        $data = PostCategory::join('posts','posts.id','=','post_categories.post_id')
+                ->join('categories','categories.id','=','post_categories.category_id')
+                ->select('posts.*','categories.name as kategori','post_categories.id as id_post')
+                ->where('post_categories.category_id',3)
+                ->get();
+
+        return view('user.categoryArtikel',compact('data'));
+    }
+
+    public function categoryCerpen()
+    {
+        $data = PostCategory::join('posts','posts.id','=','post_categories.post_id')
+                ->join('categories','categories.id','=','post_categories.category_id')
+                ->select('posts.*','categories.name as kategori','post_categories.id as id_post')
+                ->where('post_categories.category_id',2)
+                ->get();
+
+        return view('user.categoryCerpen',compact('data'));
     }
 }

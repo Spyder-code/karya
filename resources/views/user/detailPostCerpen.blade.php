@@ -3,9 +3,9 @@
     <!--* Greeting  -->
     <section class="m-10 pt-16">
         <div class="pb-5 min-h-full" style="font-family: 'Quicksand', sans-serif;">
-            <h4><a href="{{ route('beranda') }}">Home</a> > <a href="{{ route('user.category-artikel') }}">{{ $post->kategori }}</a> > <a href="#" style="color: rgba(96, 165, 250, 100);">{{ $post->title }}</a></h4>
+            <h4><a href="{{ route('beranda') }}">Home</a> > <a href="{{ route('user.category-cerpen') }}">{{ $post->kategori }}</a> > <a href="#" style="color: rgba(96, 165, 250, 100);">{{ $post->title }}</a></h4>
         </div>
-        <a href="#" class="inline-block text-sm px-10 py-5 leading-none bg-yellow-400 text-black rounded-2xl hover:shadow-lg hover:text-teal mt-4 lg:mt-0 transform hover:scale-105 motion-reduce:transform-none" style="font-family: 'Quicksand', sans-serif;">{{ $post->kategori }}</a>
+        <a href="#" class="inline-block text-sm px-10 py-5 leading-none bg-green-400 text-black rounded-2xl hover:shadow-lg hover:text-teal mt-4 lg:mt-0 transform hover:scale-105 motion-reduce:transform-none" style="font-family: 'Quicksand', sans-serif;">{{ $post->kategori }}</a>
         <!-- component -->
         <!-- This is an example component -->
 
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="relative px-0 md:px-12 lg:px-32">
-        <div class="rounded-3xl p-10 md:p-15 lg:p-20 bg-yellow-200">
+        <div class="rounded-3xl p-10 md:p-15 lg:p-20 bg-green-200">
             <div class="rounded-3xl py-5 pl-10 bg-white" style="font-family: 'Quicksand', sans-serif;">
                 <h1 class="text-3xl mb-2">
                     {{ $post->title }}
@@ -46,13 +46,13 @@
         </div>
         <div class="flex flex-row pt-14 justify-between" style="font-family: 'Poppins', sans-serif;">
             <div class="w-auto text-left">
-                <a class="flex-auto text-black hover:text-yellow-500" href="#">
+                <a class="flex-auto text-black hover:text-green-500" href="#">
                     <p class="pb-2">PREVIOUS POST</p>
                     <p>Keberadaan Harapan Manusia Modern</p>
                 </a>
             </div>
             <div class="w-auto text-right">
-                <a class="flex-auto text-black hover:text-yellow-500" href="#">
+                <a class="flex-auto text-black hover:text-green-500" href="#">
                     <p class="pb-2">NEXT POST</p>
                     <p>Tasbih Baru untuk Bapak</p>
                 </a>

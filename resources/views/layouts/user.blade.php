@@ -140,10 +140,10 @@
                                 Informasi Event
                             </span>
                             <ul class="list-unstyled" style="font-family: 'Quicksand', sans-serif;">
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="#"> Pendaftaran </a> </li>
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="#"> Panduan </a> </li>
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="#"> Poster </a> </li>
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="#"> Unggah </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://docs.google.com/forms/d/1UNFeThxEbZhBDhgAwElKQwOFFeiR3l6sIgEX7XZdC7k/viewform?edit_requested=true" target="_blank"> Pendaftaran </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://drive.google.com/file/d/1NEFjtB62GBKx_UFLPcpVL6NkB_9hVFrZ/view" target="_blank"> Panduan </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://drive.google.com/drive/u/0/mobile/folders/134pKQW6Hacxn8n53_NTKzhVpNI2Uo6mr?usp=sharing" target="_blank"> Poster </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://docs.google.com/forms/d/1tALZMATeYnv0GDc7FYPF4S2SxjUKRLdw_KJ4pUpxPtY/viewform?edit_requested=true" target="_blank"> Unggah </a> </li>
                                 <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="#"> Pengumuman</a> </li>
                             </ul>
                         </div>
@@ -152,9 +152,9 @@
                                 List Kategori
                             </span>
                             <ul class="list-unstyled" style="font-family: 'Quicksand', sans-serif;">
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="kategori-puisi.html"> Puisi </a> </li>
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="kategori-cerpen.html"> Cerpen </a> </li>
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="kategori-artikel.html"> Artikel </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="{{ route('user.category-puisi') }}"> Puisi </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="{{ route('user.category-cerpen') }}"> Cerpen </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="{{ route('user.category-artikel') }}"> Artikel </a> </li>
                             </ul>
                         </div>
                         <div class="w-full lg:w-4/12 px-4 ml-auto">
