@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\EventUser;
 use App\Models\Post;
 use App\Models\PostStatus;
 use App\Models\PostType;
@@ -72,6 +73,12 @@ class AdminController extends Controller
     public function userDestroy(User $user)
     {
         User::destroy($user->id);
+        return back()->with('success','User deleted!');
+    }
+
+    public function eventUserDestroy(EventUser $eventuser)
+    {
+        EventUser::destroy($eventuser->id);
         return back()->with('success','User deleted!');
     }
 

@@ -99,14 +99,64 @@
                                     </td>
                                     <td class="d-flex">
                                         <button data-placement="bottom" title="View" class="btn btn-primary mx-1" type="button" data-toggle="modal"
-                                        data-target="#preview-{{ $item->id }}"><i class="fas fa-eye"></i></button>
+                                        data-target="#lihat{{ $item->id }}"><i class="fas fa-eye"></i></button>
                                         <form action="{{ route('event.destroy',['event'=>$item->id]) }}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit"><i class="fas fa-trash-alt"></i></button>
                                         </form>
+                                        <button data-placement="bottom" title="View" class="btn btn-primary mx-1" type="button" data-toggle="modal"
+                                        data-target="#preview{{ $item->id }}"><i class="fas fa-pencil-alt"></i></button>
                                     </td>
                                 </tr>
+                                <div class="modal fade" id="preview{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModal2Label">{{ $item->name }}</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form class="forms-sample" action="{{ route('event.update',['event'=>$item->id]) }}" method="POST">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <div class="form-group">
+                                                        <label for="name">Name</label>
+                                                        <input type="text" class="form-control" id="Name" name="name" value="{{ $item->name }}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="name">Link embed instagram</label>
+                                                        <input type="text" class="form-control" id="Name" name="instagram_embed" value="{{ $item->instagram_embed }}">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="lihat{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">{{ $item->name }}</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                {!! $item->instagram_embed !!}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 @endforeach
                             </tbody>
                         </table>
@@ -181,14 +231,13 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModal2Label">Hapus Data</h5>
+                                                <h5 class="modal-title" id="exampleModal2Label">Juri</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
                                                 <img src="{{ $item->avatar }}" class="img-fluid">
-                                                <p>{{ $item->alamat }}</p>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -251,34 +300,13 @@
                                             <td>{{ $item->user->name }}</td>
                                             <td>{{ $item->event->name }}</td>
                                             <td class="d-flex">
-                                                <button data-placement="bottom" title="View" class="btn btn-primary mx-1" type="button" data-toggle="modal"
-                                                data-target="#preview-{{ $item->id }}"><i class="fas fa-eye"></i></button>
-                                                <form action="{{ route('user.destroy',['user'=>$item->id]) }}" method="post">
+                                                <form action="{{ route('eventuser.destroy',['eventuser'=>$item->id]) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button data-toggle="tooltip" data-placement="bottom" title="Delete" class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit"><i class="fas fa-trash-alt"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
-                                        <div class="modal fade" id="preview-{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModal2Label">Hapus Data</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <img src="{{ $item->avatar }}" class="img-fluid">
-                                                        <p>{{ $item->alamat }}</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         @endforeach
                                     </tbody>
                                 </table>
