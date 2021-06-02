@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             TransactionStatusSeeder::class,
             PaymentMethodSeeder::class,
+            EventSeeder::class,
+            SettingSeeder::class,
         ]);
     }
 }

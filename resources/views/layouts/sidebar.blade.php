@@ -55,6 +55,9 @@
     <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('event.index') }}"
         aria-expanded="false"><i class="fas fas fa-list"></i><span
             class="hide-menu">Manajemen Event</span></a>
+    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('setting.index') }}"
+        aria-expanded="false"><i class="fas fas fa-cog"></i><span
+            class="hide-menu">Settings</span></a>
     <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('admin.profile') }}"
         aria-expanded="false"><i class="fas fas fa-user"></i><span
             class="hide-menu">Profile</span></a>

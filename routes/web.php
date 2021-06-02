@@ -53,6 +53,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin','phone']], function(
     Route::put('/karya/{post}/schedule',  'PostController@updateSchedule')->name('post.update.schedule');
     Route::put('/event/active/update/{event}',  'EventController@updateActive')->name('event.update.active');
     Route::resource('event', 'EventController');
+    Route::resource('setting', 'SettingController');
 });
 
 Route::middleware(['auth'])->group(function () {

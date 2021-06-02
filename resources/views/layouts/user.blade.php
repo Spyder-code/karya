@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
+    @yield('style')
 </head>
 
 <body class="antialiased bg-body text-body font-body">
@@ -182,6 +183,8 @@
         </div>
     </footer>
     <!--* Footer End  -->
+
+    @yield('script')
 </body>
 
 </html>

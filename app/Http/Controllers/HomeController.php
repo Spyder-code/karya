@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Post;
 use App\Models\PostCategory;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,13 +39,15 @@ class HomeController extends Controller
 
     public function home()
     {
-        return view('user.index');
+        $setting = Setting::find(1);
+        return view('user.index', compact('setting'));
     }
 
     public function event()
     {
         $data = Event::all();
-        return view('user.event',compact('data'));
+        $active = Event::all()->take(3)->sortByDesc('created_at');
+        return view('user.event',compact('data','active'));
     }
 
     public function read()
