@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\Post;
 use App\Models\PostCategory;
 use Illuminate\Http\Request;
@@ -42,7 +43,8 @@ class HomeController extends Controller
 
     public function event()
     {
-        return view('user.event');
+        $data = Event::all();
+        return view('user.event',compact('data'));
     }
 
     public function read()

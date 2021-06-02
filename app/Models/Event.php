@@ -9,5 +9,5 @@ class Event extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','active'];
+    protected $fillable = ['name','active','instagram_embed'];
 }

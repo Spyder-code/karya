@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('active')->default(true);
+            $table->text('instagram_embed');
             $table->timestamps();
         });
     }

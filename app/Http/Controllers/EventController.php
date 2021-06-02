@@ -41,10 +41,11 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'instagram_embed' => 'required'
         ]);
 
-        Event::create(['name' =>$request->name]);
+        Event::create($request->all());
         return back()->with('success','Event Created!');
     }
 
