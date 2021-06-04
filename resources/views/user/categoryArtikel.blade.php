@@ -19,8 +19,8 @@
         <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4 py-20" style="font-family: 'Poppins', sans-serif;">
             @foreach ($data as $item)
             <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
-                <h5 class="text-sm">{{ $item->kategori }}</h5>
-                <a href="{{ route('user.baca-karya.detail',['id'=>$item->id_post]) }}" class="text-xl py-2 text-black hover:text-yellow-500">{{ $item->title }}</a>
+                <h5 class="text-sm">{{ $item->categoryPost->name }}</h5>
+                <a href="{{ route('user.baca-karya.detail',['id'=>$item->id]) }}" class="text-xl py-2 text-black hover:text-yellow-500">{{ $item->title }}</a>
                     <div class="flex flex-row mb-2">
                         <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
                         <h5 class="text-sm text-gray-300 my-auto">
@@ -31,9 +31,7 @@
             </div>
             @endforeach
         </div>
-        <div class="text-center" style="font-family: 'Quicksand', sans-serif;">
-            <button class="bg-yellow-200 hover:bg-yellow-300 text-black py-2 px-6 rounded">Load More</button>
-        </div>
+        {{$data->links('vendor.pagination.custom')}}
     </div>
 </div>
 @endsection

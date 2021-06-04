@@ -145,54 +145,25 @@
     <section class="bg-gradient-to-b from-blue-100" style="font-family: 'Poppins', sans-serif;">
         <div class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10 pb-10 px-10">
+                @foreach ($puisi as $item)
                 <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
                     <h5 class="text-sm" style="color: #FF33AB;">Puisi</h5>
-                    <a href="puisi.html" class="text-xl py-2 text-black hover:text-blue-500">Matahari Membelah Tubuhmu Dan Mereka Tak Tahu Itu</a>
+                    <a href="{{ route('user.baca-karya.detail',['id'=>$item->id]) }}" class="text-xl py-2 text-black hover:text-blue-500">{{ $item->title }}</a>
                     <div class="flex flex-row mb-2">
                         <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
                         <h5 class="text-sm text-gray-300 my-auto">
-                            FUNBAHASA / Januari 17, 2021
+                            FUNBAHASA / {{ date('d F y', strtotime($item->schedule)) }}
                         </h5>
                     </div>
-                    <p class="text-sm">Rasyid Yudhistira MATAHARI MEMBELAH TUBUHMU DAN MEREKA TAK TAHU ITU Kenapa terburu-buru untuk menunjuk ke atas dan bertanya kapan akan dibelah? Kau tentu tahu siapa siapa yang menunggu itu.</p>
+                    <p class="text-sm">{{ Str::limit($item->post_excerpt, 200) }}</p>
                 </div>
-                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
-                    <h5 class="text-sm" style="color: #FF33AB;">Puisi</h5>
-                    <a href="puisi.html" class="text-xl py-2 text-black hover:text-blue-500">Matahari Membelah Tubuhmu Dan Mereka Tak Tahu Itu</a>
-                    <div class="flex flex-row mb-2">
-                        <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
-                        <h5 class="text-sm text-gray-300 my-auto">
-                            FUNBAHASA / Januari 17, 2021
-                        </h5>
-                    </div>
-                    <p class="text-sm">Rasyid Yudhistira MATAHARI MEMBELAH TUBUHMU DAN MEREKA TAK TAHU ITU Kenapa terburu-buru untuk menunjuk ke atas dan bertanya kapan akan dibelah? Kau tentu tahu siapa siapa yang menunggu itu.</p>
-                </div>
-                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
-                    <h5 class="text-sm" style="color: #FF33AB;">Puisi</h5>
-                    <a href="puisi.html" class="text-xl py-2 text-black hover:text-blue-500">Matahari Membelah Tubuhmu Dan Mereka Tak Tahu Itu</a>
-                    <div class="flex flex-row mb-2">
-                        <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
-                        <h5 class="text-sm text-gray-300 my-auto">
-                            FUNBAHASA / Januari 17, 2021
-                        </h5>
-                    </div>
-                    <p class="text-sm">Rasyid Yudhistira MATAHARI MEMBELAH TUBUHMU DAN MEREKA TAK TAHU ITU Kenapa terburu-buru untuk menunjuk ke atas dan bertanya kapan akan dibelah? Kau tentu tahu siapa siapa yang menunggu itu.</p>
-                </div>
+                @endforeach
             </div>
             <div class="pb-5">
                 <ul class="flex justify-center">
                     <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">1</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">2</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">3</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="flex items-center font-bold" href="#">
-                            <span class="mx-3">Next</span>
+                        <a class="flex items-center font-bold" href="{{ route('user.category-puisi') }}">
+                            <span class="mx-3">View More</span>
                         </a>
                     </li>
                 </ul>
@@ -200,54 +171,25 @@
         </div>
         <div class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10 pb-10 px-10">
+                @foreach ($cerpen as $item)
                 <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
                     <h5 class="text-sm" style="color: #FF33AB;">Cerpen</h5>
-                    <a href="cerpen.html" class="text-xl py-2 text-black hover:text-blue-500">Matahari Membelah Tubuhmu Dan Mereka Tak Tahu Itu</a>
+                    <a href="{{ route('user.baca-karya.detail',['id'=>$item->id]) }}" class="text-xl py-2 text-black hover:text-blue-500">{{ $item->title }}</a>
                     <div class="flex flex-row mb-2">
                         <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
                         <h5 class="text-sm text-gray-300 my-auto">
-                            FUNBAHASA / Januari 17, 2021
+                            FUNBAHASA / {{ date('d F y', strtotime($item->schedule)) }}
                         </h5>
                     </div>
-                    <p class="text-sm">Rasyid Yudhistira MATAHARI MEMBELAH TUBUHMU DAN MEREKA TAK TAHU ITU Kenapa terburu-buru untuk menunjuk ke atas dan bertanya kapan akan dibelah? Kau tentu tahu siapa siapa yang menunggu itu.</p>
+                    <p class="text-sm">{{ Str::limit($item->post_excerpt, 200) }}</p>
                 </div>
-                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
-                    <h5 class="text-sm" style="color: #FF33AB;">Cerpen</h5>
-                    <a href="cerpen.html" class="text-xl py-2 text-black hover:text-blue-500">Matahari Membelah Tubuhmu Dan Mereka Tak Tahu Itu</a>
-                    <div class="flex flex-row mb-2">
-                        <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
-                        <h5 class="text-sm text-gray-300 my-auto">
-                            FUNBAHASA / Januari 17, 2021
-                        </h5>
-                    </div>
-                    <p class="text-sm">Rasyid Yudhistira MATAHARI MEMBELAH TUBUHMU DAN MEREKA TAK TAHU ITU Kenapa terburu-buru untuk menunjuk ke atas dan bertanya kapan akan dibelah? Kau tentu tahu siapa siapa yang menunggu itu.</p>
-                </div>
-                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
-                    <h5 class="text-sm" style="color: #FF33AB;">Cerpen</h5>
-                    <a href="cerpen.html" class="text-xl py-2 text-black hover:text-blue-500">Matahari Membelah Tubuhmu Dan Mereka Tak Tahu Itu</a>
-                    <div class="flex flex-row mb-2">
-                        <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
-                        <h5 class="text-sm text-gray-300 my-auto">
-                            FUNBAHASA / Januari 17, 2021
-                        </h5>
-                    </div>
-                    <p class="text-sm">Rasyid Yudhistira MATAHARI MEMBELAH TUBUHMU DAN MEREKA TAK TAHU ITU Kenapa terburu-buru untuk menunjuk ke atas dan bertanya kapan akan dibelah? Kau tentu tahu siapa siapa yang menunggu itu.</p>
-                </div>
+                @endforeach
             </div>
             <div class="pb-5">
                 <ul class="flex justify-center">
                     <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">1</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">2</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">3</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="flex items-center font-bold" href="#">
-                            <span class="mx-3">Next</span>
+                        <a class="flex items-center font-bold" href="{{ route('user.category-cerpen') }}">
+                            <span class="mx-3">View More</span>
                         </a>
                     </li>
                 </ul>
@@ -255,54 +197,25 @@
         </div>
         <div class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10 pb-10 px-10">
+                @foreach ($artikel as $item)
                 <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
                     <h5 class="text-sm" style="color: #FF33AB;">Artikel</h5>
-                    <a href="artikel.html" class="text-xl py-2 text-black hover:text-blue-500">Matahari Membelah Tubuhmu Dan Mereka Tak Tahu Itu</a>
+                    <a href="{{ route('user.baca-karya.detail',['id'=>$item->id]) }}" class="text-xl py-2 text-black hover:text-blue-500">{{ $item->title }}</a>
                     <div class="flex flex-row mb-2">
                         <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
                         <h5 class="text-sm text-gray-300 my-auto">
-                            FUNBAHASA / Januari 17, 2021
+                            FUNBAHASA / {{ date('d F y', strtotime($item->schedule)) }}
                         </h5>
                     </div>
-                    <p class="text-sm">Rasyid Yudhistira MATAHARI MEMBELAH TUBUHMU DAN MEREKA TAK TAHU ITU Kenapa terburu-buru untuk menunjuk ke atas dan bertanya kapan akan dibelah? Kau tentu tahu siapa siapa yang menunggu itu.</p>
+                    <p class="text-sm">{{ Str::limit($item->post_excerpt, 200) }}</p>
                 </div>
-                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
-                    <h5 class="text-sm" style="color: #FF33AB;">Artikel</h5>
-                    <a href="artikel.html" class="text-xl py-2 text-black hover:text-blue-500">Matahari Membelah Tubuhmu Dan Mereka Tak Tahu Itu</a>
-                    <div class="flex flex-row mb-2">
-                        <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
-                        <h5 class="text-sm text-gray-300 my-auto">
-                            FUNBAHASA / Januari 17, 2021
-                        </h5>
-                    </div>
-                    <p class="text-sm">Rasyid Yudhistira MATAHARI MEMBELAH TUBUHMU DAN MEREKA TAK TAHU ITU Kenapa terburu-buru untuk menunjuk ke atas dan bertanya kapan akan dibelah? Kau tentu tahu siapa siapa yang menunggu itu.</p>
-                </div>
-                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
-                    <h5 class="text-sm" style="color: #FF33AB;">Artikel</h5>
-                    <a href="artikel.html" class="text-xl py-2 text-black hover:text-blue-500">Matahari Membelah Tubuhmu Dan Mereka Tak Tahu Itu</a>
-                    <div class="flex flex-row mb-2">
-                        <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
-                        <h5 class="text-sm text-gray-300 my-auto">
-                            FUNBAHASA / Januari 17, 2021
-                        </h5>
-                    </div>
-                    <p class="text-sm">Rasyid Yudhistira MATAHARI MEMBELAH TUBUHMU DAN MEREKA TAK TAHU ITU Kenapa terburu-buru untuk menunjuk ke atas dan bertanya kapan akan dibelah? Kau tentu tahu siapa siapa yang menunggu itu.</p>
-                </div>
+                @endforeach
             </div>
             <div class="pb-10">
                 <ul class="flex justify-center">
                     <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">1</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">2</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="font-bold" href="#">3</a>
-                    </li>
-                    <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        <a class="flex items-center font-bold" href="#">
-                            <span class="mx-3">Next</span>
+                        <a class="flex items-center font-bold" href="{{ route('user.category-artikel') }}">
+                            <span class="mx-3">View More</span>
                         </a>
                     </li>
                 </ul>

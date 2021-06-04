@@ -21,7 +21,7 @@ class CategorySeeder extends Seeder
             'name' => 'Cerpen'
         ]);
         Category::create([
-            'name' => 'Anekdot'
+            'name' => 'Artikel'
         ]);
     }
 }

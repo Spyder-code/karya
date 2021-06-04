@@ -7,7 +7,7 @@
     <!--* Greeting  -->
     <section class="m-10 pt-16" style="font-family: 'Quicksand', sans-serif;">
         <div class="pb-5 min-h-full">
-            <h4><a href="{{ route('beranda') }}">Home</a> > <a href="tentang_kami.html" style="color: rgba(96, 165, 250, 100);">Tentang Kami</a></h4>
+            <h4><a href="{{ route('beranda') }}">Home</a> > <a href="{{ route('beranda') }}" style="color: rgba(96, 165, 250, 100);">Tentang Kami</a></h4>
         </div>
     </section>
 

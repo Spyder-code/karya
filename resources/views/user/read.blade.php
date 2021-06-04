@@ -36,8 +36,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 pb-10" style="font-family: Poppins;">
                 @foreach ($data as $item)
                 <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
-                    <h5 class="text-sm" style="color: #FF33AB;">{{ $item->kategori }}</h5>
-                    <a href="{{ route('user.baca-karya.detail',['id'=>$item->id_post]) }}" class="text-xl py-2 text-black hover:text-blue-500">{{ $item->title }}</a>
+                    <h5 class="text-sm" style="color: #FF33AB;">{{ $item->categoryPost->name }}</h5>
+                    <a href="{{ route('user.baca-karya.detail',['id'=>$item->id]) }}" class="text-xl py-2 text-black hover:text-blue-500">{{ $item->title }}</a>
                     <div class="flex flex-row mb-2">
                         <img src="{{ asset('images') }}/icon-calendar.png" class="w-6 mr-2">
                         <h5 class="text-sm text-gray-300 my-auto">
@@ -48,13 +48,13 @@
                 </div>
                 @endforeach
             </div>
-            <div class="pb-5">
+            {{$data->links('vendor.pagination.custom')}}
+            {{-- <div class="pb-5">
                 <ul class="flex justify-center">
                     <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
-                        {{$data->links()}}
                     </li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
     </section>
 @endsection

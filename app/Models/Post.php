@@ -18,7 +18,8 @@ class Post extends Model
         'post_excerpt',
         'schedule',
         'status',
-        'point'
+        'point',
+        'category',
     ];
 
     public function user()
@@ -34,5 +35,10 @@ class Post extends Model
     public function typePost()
     {
         return $this->belongsTo(PostType::class,'type');
+    }
+
+    public function categoryPost()
+    {
+        return $this->belongsTo(Category::class,'category');
     }
 }

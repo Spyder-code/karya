@@ -40,7 +40,10 @@ class HomeController extends Controller
     public function home()
     {
         $setting = Setting::find(1);
-        return view('user.index', compact('setting'));
+        $puisi = Post::all()->where('category',1)->sortByDesc('schedule')->take(3);
+        $cerpen = Post::all()->where('category',2)->sortByDesc('schedule')->take(3);
+        $artikel = Post::all()->where('category',3)->sortByDesc('schedule')->take(3);
+        return view('user.index', compact('setting','cerpen','artikel','puisi'));
     }
 
     public function event()
@@ -52,32 +55,43 @@ class HomeController extends Controller
 
     public function read()
     {
-        $data = PostCategory::join('posts','posts.id','=','post_categories.post_id')
-                ->join('categories','categories.id','=','post_categories.category_id')
-                ->select('posts.*','categories.name as kategori','post_categories.id as id_post')
-                ->where('posts.status',5)
-                ->paginate(1);
+        $data = Post::where('posts.status',5)
+                ->paginate(9);
         return view('user.read',compact('data'));
     }
 
     public function readDetail($id)
     {
-        $post = PostCategory::join('posts','posts.id','=','post_categories.post_id')
-                ->join('categories','categories.id','=','post_categories.category_id')
-                ->select('posts.*','categories.name as kategori')
-                ->where('post_categories.id',$id)
-                ->first();
+        $sum = Post::all();
+        $post = Post::find($id);
+        $arrayId = array();
 
-        $a = PostCategory::select('post_categories.category_id')
-            ->where('post_categories.id',$id)
-            ->first();
+        foreach ($sum as $item ) {
+            array_push($arrayId,$item->id);
+        };
 
-        if($a->category_id == 3){
-            return view('user.detailPost',compact('post'));
-        } else if ($a->category_id == 2){
-            return view('user.detailPostCerpen',compact('post'));
+        $key = array_search($id, $arrayId);
+
+        if (count($arrayId)==($key+1)){
+            $next = null;
         } else {
-            return view('user.detailPostPuisi',compact('post'));
+            $ids = $arrayId[$key+1];
+            $next = Post::find($ids);
+        }
+
+        if(0==$key){
+            $prev = null;
+        }else{
+            $ids = $arrayId[$key-1];
+            $prev = Post::find($ids);
+        }
+
+        if($post->category == 3){
+            return view('user.detailPost',compact('post','next','prev'));
+        } else if ($post->category == 2){
+            return view('user.detailPostCerpen',compact('post','next','prev'));
+        } else {
+            return view('user.detailPostPuisi',compact('post','next','prev'));
         }
 
     }
@@ -94,33 +108,21 @@ class HomeController extends Controller
 
     public function categoryPuisi()
     {
-        $data = PostCategory::join('posts','posts.id','=','post_categories.post_id')
-                ->join('categories','categories.id','=','post_categories.category_id')
-                ->select('posts.*','categories.name as kategori','post_categories.id as id_post')
-                ->where('post_categories.category_id',1)
-                ->get();
+        $data = Post::where('category',1)->paginate(9);
 
         return view('user.categoryPuisi',compact('data'));
     }
 
     public function categoryArtikel()
     {
-        $data = PostCategory::join('posts','posts.id','=','post_categories.post_id')
-                ->join('categories','categories.id','=','post_categories.category_id')
-                ->select('posts.*','categories.name as kategori','post_categories.id as id_post')
-                ->where('post_categories.category_id',3)
-                ->get();
+        $data = Post::where('category',3)->paginate(9);
 
         return view('user.categoryArtikel',compact('data'));
     }
 
     public function categoryCerpen()
     {
-        $data = PostCategory::join('posts','posts.id','=','post_categories.post_id')
-                ->join('categories','categories.id','=','post_categories.category_id')
-                ->select('posts.*','categories.name as kategori','post_categories.id as id_post')
-                ->where('post_categories.category_id',2)
-                ->get();
+        $data = Post::where('category',2)->paginate(9);
 
         return view('user.categoryCerpen',compact('data'));
     }

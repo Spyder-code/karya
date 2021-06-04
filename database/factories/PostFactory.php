@@ -27,6 +27,7 @@ class PostFactory extends Factory
             'content' => $this->faker->text(),
             'title' => $this->faker->sentence(),
             'type' => 2,
+            'category' => $this->faker->numberBetween(1,3),
             'post_excerpt' => $this->faker->text(),
             'schedule' => $this->faker->dateTime(),
             'status' => 1,

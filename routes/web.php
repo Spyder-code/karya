@@ -20,6 +20,11 @@ Route::get('/coba', function () {
    return view('layouts.user');
 });
 
+Route::get('/page', function () {
+    $data = Post::where('status',1)->update(['status'=>5]);
+    return $data;
+});
+
 
 Route::post('/coba', function (Request $request) {
     dd($request->file('thing')->store('','google'));

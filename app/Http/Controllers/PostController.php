@@ -53,7 +53,7 @@ class PostController extends Controller
             'title' => 'required',
             'type' => 'required',
             'post_excerpt' => 'required',
-            'kategori' =>'required'
+            'category' =>'required'
         ]);
 
         $post = Post::create([
@@ -64,14 +64,8 @@ class PostController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'post_excerpt' => $request->post_excerpt,
+            'category' => $request->category
         ]);
-
-        for ($i=0; $i < count($request->kategori); $i++) {
-            PostCategory::create([
-                'post_id' => $post->id,
-                'category_id' => $request->kategori[$i],
-            ]);
-        }
 
         $eve = intval($request->event);
         if ($request->type=='1') {
@@ -121,6 +115,7 @@ class PostController extends Controller
             'title' => 'required',
             'type' => 'required',
             'post_excerpt' => 'required',
+            'category' => 'required'
         ]);
 
         Post::find($post->id)->update([
@@ -129,6 +124,7 @@ class PostController extends Controller
             'post_excerpt' => $request->post_excerpt,
             'author' => $request->author,
             'content' => $request->content,
+            'category' => $request->category,
         ]);
 
         return back()->with('success','Post updated!');
@@ -160,7 +156,7 @@ class PostController extends Controller
                 'schedule' => $request->schedule
             ]);
         }
-        
+
         return back()->with('success','Post publish has updated!');
     }
 

@@ -110,7 +110,7 @@
                             <div class="col">
                                 <label for="kategori">Kategori Karya</label><br>
                                 @foreach ($category as $item)
-                                    <label class="m-1"><input type="checkbox" name="kategori[]" value="{{ $item->id }}"> {{ $item->name }}</label>
+                                    <label class="m-1"><input type="radio" {{ $item->id==$post->category?'checked':'' }} name="category" value="{{ $item->id }}"> {{ $item->name }}</label>
                                 @endforeach
                             </div>
                         </div>

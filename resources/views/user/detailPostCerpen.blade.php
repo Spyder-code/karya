@@ -3,9 +3,9 @@
     <!--* Greeting  -->
     <section class="m-10 pt-16">
         <div class="pb-5 min-h-full" style="font-family: 'Quicksand', sans-serif;">
-            <h4><a href="{{ route('beranda') }}">Home</a> > <a href="{{ route('user.category-cerpen') }}">{{ $post->kategori }}</a> > <a href="#" style="color: rgba(96, 165, 250, 100);">{{ $post->title }}</a></h4>
+            <h4><a href="{{ route('beranda') }}">Home</a> > <a href="{{ route('user.category-cerpen') }}">{{ $post->categoryPost->name }}</a> > <a href="#" style="color: rgba(96, 165, 250, 100);">{{ $post->title }}</a></h4>
         </div>
-        <a href="#" class="inline-block text-sm px-10 py-5 leading-none bg-green-400 text-black rounded-2xl hover:shadow-lg hover:text-teal mt-4 lg:mt-0 transform hover:scale-105 motion-reduce:transform-none" style="font-family: 'Quicksand', sans-serif;">{{ $post->kategori }}</a>
+        <a href="#" class="inline-block text-sm px-10 py-5 leading-none bg-green-400 text-black rounded-2xl hover:shadow-lg hover:text-teal mt-4 lg:mt-0 transform hover:scale-105 motion-reduce:transform-none" style="font-family: 'Quicksand', sans-serif;">{{ $post->categoryPost->name }}</a>
         <!-- component -->
         <!-- This is an example component -->
 
@@ -46,16 +46,20 @@
         </div>
         <div class="flex flex-row pt-14 justify-between" style="font-family: 'Poppins', sans-serif;">
             <div class="w-auto text-left">
-                <a class="flex-auto text-black hover:text-green-500" href="#">
+                @if ($prev!=null)
+                <a class="flex-auto text-black hover:text-yellow-500" href="{{ route('user.baca-karya.detail',['id'=>$prev->id]) }}">
                     <p class="pb-2">PREVIOUS POST</p>
-                    <p>Keberadaan Harapan Manusia Modern</p>
+                    <p>{{ $prev->title }}</p>
                 </a>
+                @endif
             </div>
             <div class="w-auto text-right">
-                <a class="flex-auto text-black hover:text-green-500" href="#">
+                @if ($next!=null)
+                <a class="flex-auto text-black hover:text-yellow-500" href="{{ route('user.baca-karya.detail',['id'=>$next->id]) }}">
                     <p class="pb-2">NEXT POST</p>
-                    <p>Tasbih Baru untuk Bapak</p>
+                    <p>{{ $next->title }}</p>
                 </a>
+                @endif
             </div>
         </div>
     </div>
