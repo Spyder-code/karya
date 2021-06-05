@@ -39,14 +39,15 @@
             <div
                 class="flex-row hidden flex-row w-full md:flex md:items-center md:w-full lg:flex lg:items-center lg:w-full lg:justify-end">
                 <nav class="sm:justify-end sm:w-full sm:flex">
+
                     <a href="{{ route('user.tentang-kami') }}"
-                        class="block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500" style="font-family: 'Poppins', sans-serif;">Tentang Kami</a>
+                        class="@yield('Tentang')" style="font-family: 'Poppins', sans-serif;">Tentang Kami</a>
                     <a href="{{ route('funner.tambah.karya') }}"
-                        class="block mt-4 mr-10 font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500" style="font-family: 'Poppins', sans-serif;">Unggah Karya</a>
+                        class="@yield('Unggah')" style="font-family: 'Poppins', sans-serif;">Unggah Karya</a>
                     <a href="{{ route('user.event') }}"
-                        class="block mt-4 mr-10 font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500" style="font-family: 'Poppins', sans-serif;">Event</a>
+                        class="@yield('Event')" style="font-family: 'Poppins', sans-serif;">Event</a>
                     <a href="{{ route('user.baca-karya') }}"
-                        class="block mt-4 mr-10 font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500" style="font-family: 'Poppins', sans-serif;">Baca Karya</a>
+                        class="@yield('Baca')" style="font-family: 'Poppins', sans-serif;">Baca Karya</a>
                     <a href="{{ route('login') }}"
                         class="px-5 py-1 ml-3 font-semibold text-white transition-all bg-blue-500 border-transparent rounded-full border-1 hover:border-blue-500 hover:shadow-lg hover:bg-blue-400" style="font-family: 'Quicksand', sans-serif;">
                         @if (Auth::check())
@@ -55,6 +56,7 @@
                             Masuk
                         @endif
                     </a>
+
                 </nav>
             </div>
             <!--* Nav Menu Item End -->
@@ -140,8 +142,9 @@
                             <span class="block uppercase text-gray-600 text-sm font-semibold mb-2" style="font-family: 'Poppins', sans-serif;">
                                 Informasi Event
                             </span>
+                            @php( $setting = \App\Setting::all())
                             <ul class="list-unstyled" style="font-family: 'Quicksand', sans-serif;">
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://docs.google.com/forms/d/1UNFeThxEbZhBDhgAwElKQwOFFeiR3l6sIgEX7XZdC7k/viewform?edit_requested=true" target="_blank"> Pendaftaran </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="{{ $setting->link_registration }}" target="_blank"> Pendaftaran </a> </li>
                                 <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://drive.google.com/file/d/1NEFjtB62GBKx_UFLPcpVL6NkB_9hVFrZ/view" target="_blank"> Panduan </a> </li>
                                 <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://drive.google.com/drive/u/0/mobile/folders/134pKQW6Hacxn8n53_NTKzhVpNI2Uo6mr?usp=sharing" target="_blank"> Poster </a> </li>
                                 <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://docs.google.com/forms/d/1tALZMATeYnv0GDc7FYPF4S2SxjUKRLdw_KJ4pUpxPtY/viewform?edit_requested=true" target="_blank"> Unggah </a> </li>

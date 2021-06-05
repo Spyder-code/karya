@@ -48,7 +48,8 @@ class HomeController extends Controller
 
     public function event()
     {
-        $data = Event::all();
+        // $data = Event::all();
+        $data = Event::paginate(6);
         $active = Event::all()->take(3)->sortByDesc('created_at');
         return view('user.event',compact('data','active'));
     }

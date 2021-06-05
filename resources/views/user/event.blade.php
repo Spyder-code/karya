@@ -1,4 +1,8 @@
 @extends('layouts.user')
+@section('Tentang', 'block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500')
+@section('Unggah', 'block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500')
+@section('Event', 'block mt-4 mr-10  font-semibold text-blue-500 lg:inline-block lg:mt-0 hover:text-blue-500')
+@section('Baca', 'block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500')
 @section('style')
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -59,16 +63,16 @@
     <!-- component -->
     <!-- Display Container (not part of component) START -->
 
-        <div class="text-center text-9xl pb-7" style="font-family: 'Poppins', sans-serif;">
+        <div class="text-center text-5xl md:text-7xl lg:text-8xl pb-7" style="font-family: 'Poppins', sans-serif;">
             <p>Event</p>
         </div>
         <!-- Carousel Body -->
-        <div class="mx-auto relative h-full w-3/4 md:w-7/12 lg:w-5/12 min-h-screen rounded-lg block items-center">
+        <div class="mx-auto relative h-full w-3/4 md:w-6/12 lg:w-4/12 min-h-screen rounded-lg block items-center">
             <div class="relative w-full h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg shadow shadow-lg hover:shadow-2xl">
                 <div class="swiper-container">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-                      <!-- Slides -->
+                        <!-- Slides -->
                         @foreach ($active as $item)
                             <div class="swiper-slide">
                                 {!! $item->instagram_embed !!}
@@ -77,21 +81,15 @@
                     </div>
                     <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
-
-                    <!-- If we need navigation buttons -->
-
-
-                    <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
-                  </div>
+                </div>
             </div>
             <div class="swiper-button-prev">
-                <button class="absolute top-0 mt-64 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -ml-16 focus:outline-none focus:shadow-outline">
+                <button class="absolute top-0 mt-64 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -ml-8 focus:outline-none focus:shadow-outline">
                     <span class="block" style="transform: scale(-1);">&#x279c;</span>
                 </button>
             </div>
             <div class="swiper-button-next">
-                <button class="absolute top-0 mt-64 right-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -mr-16 focus:outline-none focus:shadow-outline">
+                <button class="absolute top-0 mt-64 right-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -mr-8 focus:outline-none focus:shadow-outline">
                     <span class="block" style="transform: scale(1);">&#x279c;</span>
                 </button>
             </div>
@@ -125,7 +123,8 @@
         </div>
         @endforeach
     </div>
-    <div class="pb-10" style="font-family: 'Poppins', sans-serif;">
+    {{$data->links('vendor.pagination.custom')}}
+    {{-- <div class="pb-10" style="font-family: 'Poppins', sans-serif;">
         <ul class="flex justify-center">
             <li class="mx-3 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white rounded-lg">
                 <a class="font-bold" href="#">1</a>
@@ -142,7 +141,7 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div> --}}
 </section>
 <!--* Post End -->
 @endsection

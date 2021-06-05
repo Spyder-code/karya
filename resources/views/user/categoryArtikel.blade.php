@@ -1,4 +1,8 @@
 @extends('layouts.user')
+@section('Tentang', 'block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500')
+@section('Unggah', 'block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500')
+@section('Event', 'block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500')
+@section('Baca', 'block mt-4 mr-10  font-semibold text-blue-500 lg:inline-block lg:mt-0 hover:text-blue-500')
 @section('content')
 <section class="m-10 pt-16" style="font-family: 'Quicksand', sans-serif;">
     <div class="pb-5 min-h-full">
@@ -18,7 +22,7 @@
     <div class="bg-contain bg-no-repeat" style="background-image: url({{ asset('images') }}/Group\ 7_yellow.svg);">
         <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4 py-20" style="font-family: 'Poppins', sans-serif;">
             @foreach ($data as $item)
-            <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-blue-500">
+            <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl hover:border-yellow-500">
                 <h5 class="text-sm">{{ $item->categoryPost->name }}</h5>
                 <a href="{{ route('user.baca-karya.detail',['id'=>$item->id]) }}" class="text-xl py-2 text-black hover:text-yellow-500">{{ $item->title }}</a>
                     <div class="flex flex-row mb-2">

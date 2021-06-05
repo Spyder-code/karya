@@ -1,4 +1,8 @@
 @extends('layouts.user')
+@section('Tentang', 'block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500')
+@section('Unggah', 'block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500')
+@section('Event', 'block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500')
+@section('Baca', 'block mt-4 mr-10  font-semibold text-gray-500 lg:inline-block lg:mt-0 hover:text-blue-500')
 @section('content')
     <!--* Greeting  -->
     <section class="relative w-full bg-clip-border h-30 pt-16" style="font-family: 'Quicksand', sans-serif;">
@@ -89,8 +93,8 @@
             <div class="w-full text-center">
                 <p class="text-5xl" style="font-family: 'Quicksand', sans-serif;">Apa Kata Mereka</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4 p-8" style="font-family: 'Poppins', sans-serif;">
-                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl">
+            <div class="inline-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4 p-8" style="font-family: 'Poppins', sans-serif;">
+                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl h-auto">
                     <p>Syukur tak habisnya kepada Tuhan Yesus karena telah memantaskan saya sebagai Juara 1 Lomba Kreasi Puisi Pendek Nasional 2020 yang diadakan oleh Fun Bahasa.</p>
                     <br>
                     <p>Juga teruntuk Dewan Juri dan Fun Bahasa, terima kasih banyak. Akhirnya “Melukis Wajah Ibu” menjadi karya pertama saya yang berhasil menjuarai Event Lomba Cipta Puisi Nasional.</p>
@@ -101,39 +105,35 @@
                             <img src="{{ asset('images') }}/org-1.svg" class="display block ml-auto mr-auto py-4 rounded-full" style="width: 70%;">
                         </div>
                         <div class="w-2/3 my-auto">
-                            <h2>Sevryade Anugrah</h2>
+                            <h2>Sevryade Anugrah Sambolangi</h2>
                             <h5>Author</h5>
                         </div>
                     </div>
                 </div>
                 <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl">
-                    <p>Syukur tak habisnya kepada Tuhan Yesus karena telah memantaskan saya sebagai Juara 1 Lomba Kreasi Puisi Pendek Nasional 2020 yang diadakan oleh Fun Bahasa.</p>
+                    <p>Sangat bersyukur udah dipertemukan sama funbahasa yang membuka peluang besar buat orang-orang yang mengukir mimpinya di bidang linguistik. Ini kali pertama aku ikut event menulis kutipan di funbahasa ini dan gak pernah nyangka bisa jadi juara utama.⁣⁣⁣</p>
                     <br>
-                    <p>Juga teruntuk Dewan Juri dan Fun Bahasa, terima kasih banyak. Akhirnya “Melukis Wajah Ibu” menjadi karya pertama saya yang berhasil menjuarai Event Lomba Cipta Puisi Nasional.</p>
-                    <br>
-                    <p>Teman-teman yang sempat membaca ini, jangan menyerah untuk melangitkan mimpi yah. Makin tinggi gunung yang kita daki, makin indah pemandangannya. Ngomong-ngomong selagi masih #dirumahaja yuk sama-sama berkarya. Dan yang terpenting, jangan behenti menulis.</p>
+                    <p>Mencoba hal baru itu keren. Yang penting pengalaman, bukan gelar juaranya. Jadi harus tetap semangat memperbarui dan meningkatkan skill. Harus semangat berkarya.</p>
                     <div class="flex pt-4 pb-2">
                         <div class="w-1/3 text-center">
                             <img src="{{ asset('images') }}/org-1.svg" class="display block ml-auto mr-auto py-4 rounded-full" style="width: 70%;">
                         </div>
                         <div class="w-2/3 my-auto">
-                            <h2>Sevryade Anugrah</h2>
+                            <h2>Indira Gayatri Dian Pramesti</h2>
                             <h5>Author</h5>
                         </div>
                     </div>
                 </div>
                 <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl">
-                    <p>Syukur tak habisnya kepada Tuhan Yesus karena telah memantaskan saya sebagai Juara 1 Lomba Kreasi Puisi Pendek Nasional 2020 yang diadakan oleh Fun Bahasa.</p>
+                    <p>Bagi saya, cerita dan dongeng bukan hanya sekadar pengantar tidur, namun juga sebagai pembentuk karakter bagi anak. Saya yang sekarang, sebagiannya adalah dari pelajaran dalam dongeng-dongeng ibu saya sewaktu kecil dulu. Lomba ini merupakan wujud dari perhatian kita terhadap anak-anak yang saat ini sudah mulai kehilangan masa-masa kecilnya. Cerita untuk anak-anak harus kita kembangkan, tidak hanya untuk menunjang literasi, namun juga membangun karakter luhur anak negeri.</p>
                     <br>
-                    <p>Juga teruntuk Dewan Juri dan Fun Bahasa, terima kasih banyak. Akhirnya “Melukis Wajah Ibu” menjadi karya pertama saya yang berhasil menjuarai Event Lomba Cipta Puisi Nasional.</p>
-                    <br>
-                    <p>Teman-teman yang sempat membaca ini, jangan menyerah untuk melangitkan mimpi yah. Makin tinggi gunung yang kita daki, makin indah pemandangannya. Ngomong-ngomong selagi masih #dirumahaja yuk sama-sama berkarya. Dan yang terpenting, jangan behenti menulis.</p>
+                    <p>Terimakasih Fun Bahasa telah menghadirkan lomba yang sangat bermanfaat ini. Semoga dengan sumbangsih kecil kita, dapat berarti banyak untuk kemajuan anak bangsa.</p>
                     <div class="flex pt-4 pb-2">
                         <div class="w-1/3 text-center">
                             <img src="{{ asset('images') }}/org-1.svg" class="display block ml-auto mr-auto py-4 rounded-full" style="width: 70%;">
                         </div>
                         <div class="w-2/3 my-auto">
-                            <h2>Sevryade Anugrah</h2>
+                            <h2>Nisa Fauztina</h2>
                             <h5>Author</h5>
                         </div>
                     </div>
@@ -224,3 +224,4 @@
     </section>
         <!--* Post End -->
 @endsection
+

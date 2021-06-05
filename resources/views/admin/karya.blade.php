@@ -110,7 +110,7 @@
                                                 </div>
                                             </form> --}}
                                         </td>
-                                        <td>{{ $item->schedule==null?'unscheduled':date('d F Y', strtotime($item->schedule)) }}</td>
+                                        <td>{{ $item->schedule==null?'unscheduled':date('d F Y - H:i', strtotime($item->schedule)) }}</td>
                                         <td class="d-flex">
                                             {{-- <button data-placement="bottom" title="View" class="btn btn-warning text-white mx-1" type="button" data-toggle="modal"
                                         data-target="#previewa{{ $item->id }}"><i class="fas fa-eye"></i></button> --}}
@@ -177,7 +177,7 @@
                                         <td>{{ $item->user->name }}</td>
                                         <td>{{ $item->title }}</td>
                                         <td>{{ $item->postStatus->name }}</td>
-                                        <td>{{ date('d F Y - H:i',strtotime($item->schedule)) }}</td>
+                                        <td>{{ date('d F Y - H:i',strtotime($item->created_at)) }}</td>
                                         <td class="d-flex">
                                             <button data-placement="bottom" title="View" class="btn btn-warning text-white mx-1" type="button" data-toggle="modal"
                                         data-target="#preview{{ $item->id }}"><i class="fas fa-eye"></i></button>
