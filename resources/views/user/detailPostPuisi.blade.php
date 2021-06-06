@@ -40,9 +40,11 @@
                 <h1 class="text-3xl mb-2">
                     {{ $post->title }}
                 </h1>
+                <br>
                 <h3 class="text-gray-400 text-lg">
                     By : {{ $post->author }}
                 </h3>
+                <br>
                 <div class="text-lg" style="font-family: 'Times New Roman', Times, serif;">
                     {!! $post->content !!}
                 </div>

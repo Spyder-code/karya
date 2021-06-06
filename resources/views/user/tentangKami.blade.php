@@ -23,19 +23,19 @@
                         Tentang Kami
                     </h2>
                     <img class="pb-8" src="{{ asset('images') }}/line.png">
-                    <p class="text-md md:text-lg lg:text-2xl" style="font-family: 'Poppins', sans-serif;">
+                    <p class="text-md md:text-lg lg:text-xl" style="font-family: 'Poppins', sans-serif;">
                         Funbahasa adalah platform media online edukasi berbasis komunitas yang memiliki visi mengakselerasi pemahaman tentang bahasa dan sastra kepada masyarakat luas dengan memberikan pengetahuan seputar bahasa dan sastra sekaligus mewadahi karya dan pikiran anak bangsa melalui event kebahasaan dan kesastraan yang diselenggarakan secara berkala.
                     </p>
                 </div>
             </div>
-            <div class="flex flex-row pt-24 md:pt-32 lg:pt-72">
+            <div class="flex flex-row pt-24 md:pt-32 lg:pt-80">
                 <div class="w-1/2">
                     <img src="{{ asset('images') }}/Frame 47.svg" class="w-full h-auto">
                 </div>
                 <div class="w-1/2 my-auto p-10">
                     <h5 class="font-bold text-gray-500 text-4xl md:text-5xl lg:text-6xl" style="font-family: 'Quicksand', sans-serif;">Visi Kami</h5>
                     <img class="pb-8" src="{{ asset('images') }}/line.png">
-                    <p class="text-md md:text-lg lg:text-2xl" style="font-family: 'Poppins', sans-serif;">Mengakselerasi pengetahuan bahasa dan sastra untuk budi pekerti bangsa.</p>
+                    <p class="text-md md:text-lg lg:text-xl" style="font-family: 'Poppins', sans-serif;">Mengakselerasi pengetahuan bahasa dan sastra untuk budi pekerti bangsa.</p>
                 </div>
             </div>
         </div>

@@ -12,10 +12,9 @@
                 <h2
                     class="text-xl font-bold text-gray-500 ease-in transform md:text-4xl xl:text-6xl xl:text-bold 2xl:text-5xl lg:text-5xl sm:text-3xl 4xl:text-7xl 3xl:text-5xl 4xl:font-extrabold">
                     Akselerasi Bahasa <br> dan Sastra untuk <br> Budi Pekerti <br>Bangsa</h2>
-                <button
-                    class="px-4 py-2 lg:py-3 mt-10 text-white transition duration-200 ease-in transform bg-blue-500 border border-blue-600 rounded-full shadow-md xl:mt-20 max-w-max hover:shadow-lg hover:-translate-y-1 active:translate-y-0 lg:mt-16 lg:font-bold">
+                <a href="{{ route('user.tentang-kami') }}" class="px-4 py-2 lg:py-3 mt-10 text-white transition duration-200 ease-in transform bg-blue-500 border border-blue-600 rounded-full shadow-md xl:mt-20 max-w-max hover:shadow-lg hover:-translate-y-1 active:translate-y-0 lg:mt-16 lg:font-bold">
                     Tentang Kami
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -35,10 +34,10 @@
                 bagikan. <br>
                 Hidupkan karyamu sebagai inspirasi bangsa.
             </p>
-            <button
-                class="px-4 py-2 lg:py-3 mt-10 text-white transition duration-200 ease-in transform bg-gray-500 border border-gray-600 rounded-xl shadow-md xl:mt-16 max-w-max hover:shadow-lg hover:-translate-y-1 active:translate-y-0 lg:mt-16 lg:font-bold mx-auto" style="font-family: 'Quicksand', sans-serif;">
+            <a
+                href="https://www.instagram.com/funbahasa/" target="_blank" class="px-4 py-2 lg:py-3 mt-10 text-white transition duration-200 ease-in transform bg-gray-500 border border-gray-600 rounded-xl shadow-md xl:mt-16 max-w-max hover:shadow-lg hover:-translate-y-1 active:translate-y-0 lg:mt-16 lg:font-bold mx-auto" style="font-family: 'Quicksand', sans-serif;">
                 Ikuti Kami
-            </button>
+            </a>
         </div>
     </section>
     <!--* Call To Action End  -->
@@ -102,7 +101,7 @@
                     <p>Teman-teman yang sempat membaca ini, jangan menyerah untuk melangitkan mimpi yah. Makin tinggi gunung yang kita daki, makin indah pemandangannya. Ngomong-ngomong selagi masih #dirumahaja yuk sama-sama berkarya. Dan yang terpenting, jangan behenti menulis.</p>
                     <div class="flex pt-4 pb-2">
                         <div class="w-1/3 text-center">
-                            <img src="{{ asset('images') }}/org-1.svg" class="display block ml-auto mr-auto py-4 rounded-full" style="width: 70%;">
+                            <img src="{{ asset('images') }}/svryade.png" class="display block ml-auto mr-auto py-4 rounded-full" style="width: 70%;">
                         </div>
                         <div class="w-2/3 my-auto">
                             <h2>Sevryade Anugrah Sambolangi</h2>
@@ -116,7 +115,7 @@
                     <p>Mencoba hal baru itu keren. Yang penting pengalaman, bukan gelar juaranya. Jadi harus tetap semangat memperbarui dan meningkatkan skill. Harus semangat berkarya.</p>
                     <div class="flex pt-4 pb-2">
                         <div class="w-1/3 text-center">
-                            <img src="{{ asset('images') }}/org-1.svg" class="display block ml-auto mr-auto py-4 rounded-full" style="width: 70%;">
+                            <img src="{{ asset('images') }}/Indira.svg" class="display block ml-auto mr-auto py-4 rounded-full" style="width: 70%;">
                         </div>
                         <div class="w-2/3 my-auto">
                             <h2>Indira Gayatri Dian Pramesti</h2>

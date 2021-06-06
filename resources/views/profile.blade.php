@@ -8,7 +8,7 @@
             <div class="d-flex align-items-center">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb m-0 p-0">
-                        <li class="breadcrumb-item"><a href="index.html">Funners</a>></li>
+                        <li class="breadcrumb-item"><a href="index.html">Apps</a></li>
                         <li class="breadcrumb-item text-muted" aria-current="page">Profil</li>
                     </ol>
                 </nav>
@@ -16,12 +16,10 @@
         </div>
         <div class="col-5 align-self-center">
             <div class="customize-input float-right">
-                <select
-                    class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                    <option selected>Aug 19</option>
-                    <option value="1">July 19</option>
-                    <option value="2">Jun 19</option>
-                </select>
+                <div
+                    class="custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
+                    <?php echo date("M d"); ?>
+                </div>
             </div>
         </div>
     </div>

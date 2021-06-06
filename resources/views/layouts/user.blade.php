@@ -67,13 +67,13 @@
                     <div class="relative grid gap-6 px-5 py-6 bg-white sm:gap-8 sm:p-8">
                         <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
                             <div class="ml-2">
-                                <a href="tentang-kami.html" class="text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
+                                <a href="{{ route('user.tentang-kami') }}" class="text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
                                     Tentang Kami
                                 </a>
                             </div>
                         </a>
 
-                        <a href="unggah-karya.html" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
+                        <a href="{{ route('funner.tambah.karya') }}" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
                             <div class="ml-2">
                                 <a class="text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
                                     Unggah Karya
@@ -81,7 +81,7 @@
                             </div>
                         </a>
 
-                        <a href="Event.html" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
+                        <a href="{{ route('user.event') }}" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
                             <div class="ml-2">
                                 <a class="text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
                                     Event
@@ -89,7 +89,7 @@
                             </div>
                         </a>
 
-                        <a href="baca_karya.html" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
+                        <a href="{{ route('user.baca-karya') }}" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
                             <div class="ml-2">
                                 <a class="text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
                                     Baca Karya
@@ -142,9 +142,9 @@
                             <span class="block uppercase text-gray-600 text-sm font-semibold mb-2" style="font-family: 'Poppins', sans-serif;">
                                 Informasi Event
                             </span>
-                            @php( $setting = \App\Setting::all())
+                            {{-- @php( $setting = \App\Setting::all()) --}}
                             <ul class="list-unstyled" style="font-family: 'Quicksand', sans-serif;">
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="{{ $setting->link_registration }}" target="_blank"> Pendaftaran </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="#" target="_blank"> Pendaftaran </a> </li>
                                 <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://drive.google.com/file/d/1NEFjtB62GBKx_UFLPcpVL6NkB_9hVFrZ/view" target="_blank"> Panduan </a> </li>
                                 <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://drive.google.com/drive/u/0/mobile/folders/134pKQW6Hacxn8n53_NTKzhVpNI2Uo6mr?usp=sharing" target="_blank"> Poster </a> </li>
                                 <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://docs.google.com/forms/d/1tALZMATeYnv0GDc7FYPF4S2SxjUKRLdw_KJ4pUpxPtY/viewform?edit_requested=true" target="_blank"> Unggah </a> </li>

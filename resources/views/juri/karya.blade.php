@@ -21,7 +21,7 @@
             <div class="d-flex align-items-center">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb m-0 p-0">
-                        <li class="breadcrumb-item"><a href="karya_admin.html">Apps / List Karya</a>
+                        <li class="breadcrumb-item"><a href="karya_admin.html">Apps / Nilai Karya</a>
                         </li>
                     </ol>
                 </nav>
@@ -86,7 +86,12 @@
         @foreach ($data as $item)
             <div class="col-12 col-md-4">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">{{ $item->title }}</div>
+                    <div class="card-header bg-primary text-white">
+                        <div class="text-center">
+                            <h4>{{ $item->title }}</h4>
+                            <h6>Oleh : {{ $item->author }}</h6>
+                        </div>
+                    </div>
                     <div class="card-body text-center">
                         <p>{{  Str::limit($item->post_excerpt, 100)  }}</p>
                     </div>
