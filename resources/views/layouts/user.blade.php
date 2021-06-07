@@ -142,13 +142,13 @@
                             <span class="block uppercase text-gray-600 text-sm font-semibold mb-2" style="font-family: 'Poppins', sans-serif;">
                                 Informasi Event
                             </span>
-                            {{-- @php( $setting = \App\Setting::all()) --}}
+                            @php( $setting = \App\Models\Setting::find(1))
                             <ul class="list-unstyled" style="font-family: 'Quicksand', sans-serif;">
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="#" target="_blank"> Pendaftaran </a> </li>
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://drive.google.com/file/d/1NEFjtB62GBKx_UFLPcpVL6NkB_9hVFrZ/view" target="_blank"> Panduan </a> </li>
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://drive.google.com/drive/u/0/mobile/folders/134pKQW6Hacxn8n53_NTKzhVpNI2Uo6mr?usp=sharing" target="_blank"> Poster </a> </li>
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="https://docs.google.com/forms/d/1tALZMATeYnv0GDc7FYPF4S2SxjUKRLdw_KJ4pUpxPtY/viewform?edit_requested=true" target="_blank"> Unggah </a> </li>
-                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="#"> Pengumuman</a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="{{ $setting->link_registration }}" target="_blank"> Pendaftaran </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="{{ $setting->link_guide }}" target="_blank"> Panduan </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="{{ $setting->link_poster }}" target="_blank"> Poster </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="{{ $setting->link_upload_post }}" target="_blank"> Unggah </a> </li>
+                                <li> <a class="text-gray-700 hover:text-blue-500 font-semibold block pb-2 text-sm" href="{{ $setting->link_announcement }}"> Pengumuman</a> </li>
                             </ul>
                         </div>
                         <div class="w-6/12 lg:w-2/12 px-4 ml-auto mb-10 lg:mb-0">

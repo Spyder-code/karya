@@ -15,8 +15,8 @@ class CreateEventPostsTable extends Migration
     {
         Schema::create('event_posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('event_id')->constrained('events');
-            $table->foreignId('post_id')->constrained('posts');
+            $table->foreignId('event_id')->constrained('events')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('post_id')->constrained('posts')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

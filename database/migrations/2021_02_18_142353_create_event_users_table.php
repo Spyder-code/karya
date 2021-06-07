@@ -15,8 +15,8 @@ class CreateEventUsersTable extends Migration
     {
         Schema::create('event_users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('event_id')->constrained('events');
-            $table->foreignId('users_id')->constrained('users');
+            $table->foreignId('event_id')->constrained('events')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('users_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

@@ -15,10 +15,10 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('category')->constrained('categories');
-            $table->foreignId('type')->constrained('post_types');
-            $table->foreignId('status')->constrained('post_statuses');
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('category')->constrained('categories')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('type')->constrained('post_types')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('status')->constrained('post_statuses')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('author');
             $table->string('title');
             $table->text('content');

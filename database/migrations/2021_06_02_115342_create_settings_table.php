@@ -15,7 +15,7 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('event_id')->constrained('events');
+            $table->foreignId('event_id')->constrained('events')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('link_registration');
             $table->string('link_guide');
             $table->string('link_poster');
