@@ -65,36 +65,20 @@
                 class="absolute z-10 max-w-md px-2 transform right-10 w-screen-md mt-7 sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                 <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                     <div class="relative grid gap-6 px-5 py-6 bg-white sm:gap-8 sm:p-8">
-                        <a href="#" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
-                            <div class="ml-2">
-                                <a href="{{ route('user.tentang-kami') }}" class="text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
-                                    Tentang Kami
-                                </a>
-                            </div>
+                        <a href="{{ route('user.tentang-kami') }}" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50 text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
+                            Tentang Kami
                         </a>
 
-                        <a href="{{ route('funner.tambah.karya') }}" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
-                            <div class="ml-2">
-                                <a class="text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
-                                    Unggah Karya
-                                </a>
-                            </div>
+                        <a href="{{ route('funner.tambah.karya') }}" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50 text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
+                            Unggah Karya
                         </a>
 
-                        <a href="{{ route('user.event') }}" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
-                            <div class="ml-2">
-                                <a class="text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
-                                    Event
-                                </a>
-                            </div>
+                        <a href="{{ route('user.event') }}" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50 text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
+                            Event
                         </a>
 
-                        <a href="{{ route('user.baca-karya') }}" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50">
-                            <div class="ml-2">
-                                <a class="text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
-                                    Baca Karya
-                                </a>
-                            </div>
+                        <a href="{{ route('user.baca-karya') }}" class="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50 text-base font-medium text-gray-900" style="font-family: 'Poppins', sans-serif;">
+                            Baca Karya
                         </a>
                     </div>
                 </div>

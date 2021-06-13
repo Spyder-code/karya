@@ -7,12 +7,12 @@
     <!--* Greeting  -->
     <section class="relative w-full bg-clip-border h-30 pt-16" style="font-family: 'Quicksand', sans-serif;">
         <img src="{{ asset('images') }}/bg-greeting.svg" alt="image-greeting" class="w-full h-auto">
-        <div class="absolute top-20 md:top-28 lg:top-28 ml-14 lg:ml-20">
+        <div class="absolute top-20 sm:top-24 md:top-28 lg:top-28 ml-5 sm:ml-14 md:ml-14 lg:ml-20">
             <div class="flex flex-col">
                 <h2
                     class="text-xl font-bold text-gray-500 ease-in transform md:text-4xl xl:text-6xl xl:text-bold 2xl:text-5xl lg:text-5xl sm:text-3xl 4xl:text-7xl 3xl:text-5xl 4xl:font-extrabold">
                     Akselerasi Bahasa <br> dan Sastra untuk <br> Budi Pekerti <br>Bangsa</h2>
-                <a href="{{ route('user.tentang-kami') }}" class="px-4 py-2 lg:py-3 mt-10 text-white transition duration-200 ease-in transform bg-blue-500 border border-blue-600 rounded-full shadow-md xl:mt-20 max-w-max hover:shadow-lg hover:-translate-y-1 active:translate-y-0 lg:mt-16 lg:font-bold">
+                <a href="{{ route('user.tentang-kami') }}" class="text-xs sm:text-base px-4 py-2 lg:py-3 mt-10 text-white transition duration-200 ease-in transform bg-blue-500 border border-blue-600 rounded-full shadow-md xl:mt-20 max-w-max hover:shadow-lg hover:-translate-y-1 active:translate-y-0 lg:mt-16 lg:font-bold">
                     Tentang Kami
                 </a>
             </div>
@@ -28,14 +28,14 @@
             <h2
                 class="content-center justify-center text-2xl font-bold text-center text-gray-500 xl:text-5xl md:text-4xl lg:font-bold xl:font-bold">
                 Kirim Karya Terbaik Kalian</h2>
-            <p class="mt-5 text-center text-sm md:text-lg">
+            <p class="mt-5 text-center text-xs sm:text-sm md:text-lg">
                 Setiap orang pasti punya pengalaman dan cerita. Pengalaman merupakan <br> sebuah perjalanan yang
                 berharga, untuk itu kami hadir untuk <br> mendengarkan pengalaman dan cerita yang kalian
                 bagikan. <br>
                 Hidupkan karyamu sebagai inspirasi bangsa.
             </p>
             <a
-                href="https://www.instagram.com/funbahasa/" target="_blank" class="px-4 py-2 lg:py-3 mt-10 text-white transition duration-200 ease-in transform bg-gray-500 border border-gray-600 rounded-xl shadow-md xl:mt-16 max-w-max hover:shadow-lg hover:-translate-y-1 active:translate-y-0 lg:mt-16 lg:font-bold mx-auto" style="font-family: 'Quicksand', sans-serif;">
+                href="https://www.instagram.com/funbahasa/" target="_blank" class="text-xs sm:text-base px-4 py-2 lg:py-3 mt-10 text-white transition duration-200 ease-in transform bg-gray-500 border border-gray-600 rounded-xl shadow-md xl:mt-16 max-w-max hover:shadow-lg hover:-translate-y-1 active:translate-y-0 lg:mt-16 lg:font-bold mx-auto" style="font-family: 'Quicksand', sans-serif;">
                 Ikuti Kami
             </a>
         </div>
@@ -90,10 +90,10 @@
         <!--* What They Said  -->
     <section>
             <div class="w-full text-center">
-                <p class="text-5xl" style="font-family: 'Quicksand', sans-serif;">Apa Kata Mereka</p>
+                <p class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl" style="font-family: 'Quicksand', sans-serif;">Apa Kata Mereka</p>
             </div>
             <div class="inline-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4 p-8" style="font-family: 'Poppins', sans-serif;">
-                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl h-auto">
+                <div class="text-sm sm:text-base border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl h-auto">
                     <p>Syukur tak habisnya kepada Tuhan Yesus karena telah memantaskan saya sebagai Juara 1 Lomba Kreasi Puisi Pendek Nasional 2020 yang diadakan oleh Fun Bahasa.</p>
                     <br>
                     <p>Juga teruntuk Dewan Juri dan Fun Bahasa, terima kasih banyak. Akhirnya “Melukis Wajah Ibu” menjadi karya pertama saya yang berhasil menjuarai Event Lomba Cipta Puisi Nasional.</p>
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl">
+                <div class="text-sm sm:text-base border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl">
                     <p>Sangat bersyukur udah dipertemukan sama funbahasa yang membuka peluang besar buat orang-orang yang mengukir mimpinya di bidang linguistik. Ini kali pertama aku ikut event menulis kutipan di funbahasa ini dan gak pernah nyangka bisa jadi juara utama.⁣⁣⁣</p>
                     <br>
                     <p>Mencoba hal baru itu keren. Yang penting pengalaman, bukan gelar juaranya. Jadi harus tetap semangat memperbarui dan meningkatkan skill. Harus semangat berkarya.</p>
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl">
+                <div class="text-sm sm:text-base border border-2 shadow-lg shadow-lg bg-white p-5 rounded-2xl">
                     <p>Bagi saya, cerita dan dongeng bukan hanya sekadar pengantar tidur, namun juga sebagai pembentuk karakter bagi anak. Saya yang sekarang, sebagiannya adalah dari pelajaran dalam dongeng-dongeng ibu saya sewaktu kecil dulu. Lomba ini merupakan wujud dari perhatian kita terhadap anak-anak yang saat ini sudah mulai kehilangan masa-masa kecilnya. Cerita untuk anak-anak harus kita kembangkan, tidak hanya untuk menunjang literasi, namun juga membangun karakter luhur anak negeri.</p>
                     <br>
                     <p>Terimakasih Fun Bahasa telah menghadirkan lomba yang sangat bermanfaat ini. Semoga dengan sumbangsih kecil kita, dapat berarti banyak untuk kemajuan anak bangsa.</p>

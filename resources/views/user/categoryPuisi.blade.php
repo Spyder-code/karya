@@ -10,15 +10,15 @@
     </div>
 </section>
 <section>
-<div class="flex flex-row px-28 w-full text-right " style="font-family: 'Poppins', sans-serif;">
-    <div class="w-1/2">
-        <h1 class="text-6xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-black to-white" >Categori</h1>
-        <h1 class="text-6xl md:text-7xl lg:text-8xl text-blue-300 ml-0 md:ml-4">Puisi</h1>
+<div class="flex flex-row px-10 sm:px-20 md:px-28 lg:px-28 w-full text-right " style="font-family: 'Poppins', sans-serif;">
+    <div class="w-9/12 sm:w-8/12 md:w-1/2 lg:w-1/2">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-black to-white" >Categori</h1>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-blue-300 ml-0 md:ml-4">Puisi</h1>
     </div>
 </div>
 </section>
 <section>
-<div class="px-28">
+<div class="px-10 sm:px-20 md:px-28 lg:px-28">
     <div class="bg-contain bg-no-repeat" style="background-image: url({{ asset('images') }}/Group\ 7_blue.svg);">
         <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4 py-20" style="font-family: 'Poppins', sans-serif;">
             @foreach ($data as $item)

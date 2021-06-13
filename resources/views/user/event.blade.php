@@ -67,8 +67,8 @@
             <p>Event</p>
         </div>
         <!-- Carousel Body -->
-        <div class="mx-auto relative h-full w-3/4 md:w-6/12 lg:w-4/12 min-h-screen rounded-lg block items-center">
-            <div class="relative w-full h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg shadow shadow-lg hover:shadow-2xl">
+        <div class="mx-4 sm:mx-auto md:mx-auto lg:mx-auto relative h-full w-4/4 sm:w-6/12 md:w-6/12 lg:w-4/12 min-h-screen rounded-lg block items-center">
+            <div class="relative sm:static md:static lg:static w-full h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg shadow shadow-lg hover:shadow-2xl">
                 <div class="swiper-container">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
@@ -82,24 +82,25 @@
                     <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
                 </div>
+                <div class="swiper-button-prev">
+                    <button class="absolute top-0 mt-64 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 ml-16 sm:-ml-8 md:-ml-8 lg:-ml-8 focus:outline-none focus:shadow-outline">
+                        <span class="block" style="transform: scale(-1);">&#x279c;</span>
+                    </button>
+                </div>
+                <div class="swiper-button-next">
+                    <button class="absolute top-0 mt-64 right-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 mr-16 sm:-mr-8 md:-mr-8 lg:-mr-8 focus:outline-none focus:shadow-outline">
+                        <span class="block" style="transform: scale(1);">&#x279c;</span>
+                    </button>
+                </div>
             </div>
-            <div class="swiper-button-prev">
-                <button class="absolute top-0 mt-64 left-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -ml-8 focus:outline-none focus:shadow-outline">
-                    <span class="block" style="transform: scale(-1);">&#x279c;</span>
-                </button>
-            </div>
-            <div class="swiper-button-next">
-                <button class="absolute top-0 mt-64 right-0 bg-white rounded-full shadow-md h-12 w-12 text-2xl text-indigo-600 hover:text-indigo-400 focus:text-indigo-400 -mr-8 focus:outline-none focus:shadow-outline">
-                    <span class="block" style="transform: scale(1);">&#x279c;</span>
-                </button>
-            </div>
+
         </div>
 
     <!-- Display Container (not part of component) END -->
 </section>
 
-<section class="px-10 p-10" style="background-image: url({{ asset('images') }}/vector_event.png); background-repeat: no-repeat; background-size: contain;">
-    <div class="text-7xl pb-7" style="font-family: 'Quicksand', sans-serif;">
+<section class="px-4 sm:px-12 md:px-10 lg:px-10 p-10" style="background-image: url({{ asset('images') }}/vector_event.png); background-repeat: no-repeat; background-size: contain;">
+    <div class="text-4xl sm:text-5xl md:text-7xl lg:text-7xl pb-7" style="font-family: 'Quicksand', sans-serif;">
         <p>Lastest Event</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 pb-10" style="font-family: 'Poppins', sans-serif;">
