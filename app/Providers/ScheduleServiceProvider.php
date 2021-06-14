@@ -24,12 +24,12 @@ class ScheduleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $now = date("Y-m-d H:i:s");
-        $post = Post::all()->where('status',4);
-        foreach ($post as $item) {
-            if ($item->schedule<=$now) {
-                Post::find($item->id)->update(['status'=>5]);
-            }
-        }
+        // $now = date("Y-m-d H:i:s");
+        // $post = Post::all()->where('status',4);
+        // foreach ($post as $item) {
+        //     if ($item->schedule<=$now) {
+        //         Post::find($item->id)->update(['status'=>5]);
+        //     }
+        // }
     }
 }
