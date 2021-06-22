@@ -15,7 +15,6 @@ class Setting extends Model
         'link_guide',
         'link_upload_post',
         'link_poster',
-        'link_announcement',
         'event_id',
     ];
 

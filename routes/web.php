@@ -35,6 +35,7 @@ Auth::routes();
 Route::get('/home',  'HomeController@index')->name('home');
 Route::get('/',  'HomeController@home')->name('beranda');
 Route::get('/event',  'HomeController@event')->name('user.event');
+Route::get('/announcement',  'HomeController@announcement')->name('user.announcement');
 Route::get('/read-post',  'HomeController@read')->name('user.baca-karya');
 Route::get('/read-post/{id}',  'HomeController@readDetail')->name('user.baca-karya.detail');
 Route::get('/tentang-kami',  'HomeController@tentangKami')->name('user.tentang-kami');
@@ -52,14 +53,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin','phone']], function(
     //Route::get('/event',  'AdminController@event')->name('event.admin');
     Route::post('/juri',  'AdminController@juriStore')->name('user.juri.store');
     Route::post('/juri-event',  'EventController@eventJuri')->name('event.juri');
+    Route::post('/add-winner',  'EventWinnerController@addWinner')->name('winner.post');
     Route::delete('/user/{user}',  'AdminController@userDestroy')->name('user.destroy');
     Route::delete('/eventuser/{eventuser}',  'AdminController@eventUserDestroy')->name('eventuser.destroy');
     Route::delete('/karya/{post}',  'PostController@destroy')->name('post.destroy');
+    Route::delete('/update-winner/{winner}',  'EventWinnerController@destroyWinner')->name('winner.destroy');
     Route::put('/karya/{post}',  'PostController@updateStatus')->name('post.update.status');
     Route::put('/karya/{post}/schedule',  'PostController@updateSchedule')->name('post.update.schedule');
     Route::put('/event/active/update/{event}',  'EventController@updateActive')->name('event.update.active');
+    Route::put('/update-winner/{winner}',  'EventWinnerController@updateWinner')->name('winner.update');
     Route::resource('event', 'EventController');
     Route::resource('setting', 'SettingController');
+    Route::resource('event-winner', 'EventWinnerController');
 });
 
 Route::middleware(['auth'])->group(function () {

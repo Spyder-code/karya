@@ -54,13 +54,16 @@
             class="hide-menu">List Karya</span></a></li>
     <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('event.index') }}"
         aria-expanded="false"><i class="fas fas fa-list"></i><span
-            class="hide-menu">Manajemen Event</span></a>
+            class="hide-menu">Manajemen Event</span></a></li>
+    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('event-winner.index') }}"
+        aria-expanded="false"><i class="fas fa-trophy"></i><span
+            class="hide-menu">Event Winner</span></a></li>
     <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('setting.index') }}"
         aria-expanded="false"><i class="fas fas fa-cog"></i><span
-            class="hide-menu">Settings</span></a>
+            class="hide-menu">Settings</span></a></li>
     <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{ route('admin.profile') }}"
         aria-expanded="false"><i class="fas fas fa-user"></i><span
-            class="hide-menu">Profile</span></a>
+            class="hide-menu">Profile</span></a></li>
 </li>
 @endif
 <li class="list-divider"></li>

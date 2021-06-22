@@ -19,7 +19,6 @@ class SettingSeeder extends Seeder
             'link_guide' => 'https://drive.google.com/file/d/1NEFjtB62GBKx_UFLPcpVL6NkB_9hVFrZ/view',
             'link_upload_post' => 'https://docs.google.com/forms/d/1tALZMATeYnv0GDc7FYPF4S2SxjUKRLdw_KJ4pUpxPtY/viewform?edit_requested=true',
             'link_poster' => 'https://drive.google.com/drive/u/0/mobile/folders/134pKQW6Hacxn8n53_NTKzhVpNI2Uo6mr?usp=sharing',
-            'link_announcement' => '#',
             'event_id' => 1,
         ]);
     }

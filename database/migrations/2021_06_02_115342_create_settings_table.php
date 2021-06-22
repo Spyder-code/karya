@@ -20,7 +20,6 @@ class CreateSettingsTable extends Migration
             $table->string('link_guide');
             $table->string('link_poster');
             $table->string('link_upload_post');
-            $table->string('link_announcement');
             $table->timestamps();
         });
     }

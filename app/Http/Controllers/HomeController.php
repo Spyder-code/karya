@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use App\Models\Event;
+use App\Models\EventWinner;
 use App\Models\Post;
 use App\Models\PostCategory;
 use App\Models\Setting;
@@ -126,5 +128,16 @@ class HomeController extends Controller
         $data = Post::where('category',2)->paginate(9);
 
         return view('user.categoryCerpen',compact('data'));
+    }
+
+    public function announcement()
+    {
+        $announcement = Announcement::where('status',1)->first();
+        if ($announcement!=null) {
+            $data = EventWinner::all()->where('announcement_id',$announcement->id);
+            return view('user.announcement',compact('data','announcement'));
+        }else{
+            return redirect(404);
+        }
     }
 }

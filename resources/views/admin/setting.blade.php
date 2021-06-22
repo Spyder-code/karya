@@ -92,12 +92,6 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Link winner announcement :</td>
-                                            <td>
-                                                <input type="text" name="link_announcement" id="" class="form-control" value="{{ $setting->link_announcement }}">
-                                            </td>
-                                        </tr>
-                                        <tr>
                                             <td></td>
                                             <td>
                                                 <button class="btn btn-success" type="submit">Update</button>

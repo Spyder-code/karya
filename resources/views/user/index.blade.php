@@ -72,7 +72,7 @@
                             <p style="font-family: 'Poppins', sans-serif;">Unggah Puisi #FPPN2020</p>
                         </div>
                     </a>
-                    <a href="{{ $setting->link_announcement }}">
+                    <a href="{{ route('user.announcement') }}">
                         <div class="border shadow-lg bg-white rounded-xl p-4 text-center transform hover:scale-105 hover:border-blue-500 motion-reduce:transform-none">
                             <img src="{{ asset('images') }}/Pengumuman.svg" class="display block ml-auto mr-auto py-4 w-full">
                             <p class="font-bold" style="font-family: 'Quicksand', sans-serif;">Pengumuman</p>
