@@ -10,6 +10,26 @@
         <div class="row">
             <div class="col">
                 <div class="card">
+                    @if ($message = Session::get('success'))
+                    <div class="row">
+                        <div class="col mt-3">
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                <strong>{{ $message }}</strong>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <div class="card-header">
                         <a href="{{ route('event-winner.index') }}" class="btn btn-primary"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
                     </div>
@@ -28,15 +48,19 @@
                             </div>
                             <div class="form-group">
                                 <label>Note</label>
-                                <textarea name="note" id="example"></textarea>
+                                <textarea name="note" id="example">{{ old('note') }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Jury Note</label>
-                                <textarea name="jury_note" id="example"></textarea>
+                                <textarea name="jury_note" id="example">{{ old('jury_note') }}</textarea>
                             </div>
                             <div class="form-group">
-                                <label>Excel File</label>
+                                <label>Event Winner File</label>
                                 <input type="file" name="excel" class="form-control-file">
+                            </div>
+                            <div class="form-group">
+                                <label>Sertif File</label>
+                                <input type="file" name="file[]" class="form-control-file" multiple>
                             </div>
                             <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Save</button>
                         </form>

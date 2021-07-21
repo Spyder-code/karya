@@ -11,13 +11,14 @@
         "php": "^7.3|^8.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.3",
         "laravel/framework": "^8.12",
         "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "maatwebsite/excel": "^3.1",
         "midtrans/midtrans-php": "^2.3",
+        "snowfire/beautymail": "^1.1",
         "yohang88/letter-avatar": "^2.2"
     },
     "require-dev": {

@@ -56,11 +56,15 @@
                         @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="Name" name="name">
+                            <input type="text" class="form-control" name="name">
                         </div>
                         <div class="form-group">
-                            <label for="name">Link embed instagram</label>
-                            <input type="text" class="form-control" id="Name" name="instagram_embed">
+                            <label for="instagram_embed">Link embed instagram</label>
+                            <input type="text" class="form-control" name="instagram_embed">
+                        </div>
+                        <div class="form-group">
+                            <label for="level">Tingkat event</label>
+                            <input type="text" class="form-control" name="level">
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                     </form>

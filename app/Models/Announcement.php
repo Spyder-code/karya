@@ -21,4 +21,9 @@ class Announcement extends Model
     {
         return $this->belongsTo(Event::class, 'event_id');
     }
+
+    public function eventWinner()
+    {
+        return $this->hasMany(EventWinner::class,'announcement_id');
+    }
 }

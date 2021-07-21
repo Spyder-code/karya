@@ -54,6 +54,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin','phone']], function(
     Route::post('/juri',  'AdminController@juriStore')->name('user.juri.store');
     Route::post('/juri-event',  'EventController@eventJuri')->name('event.juri');
     Route::post('/add-winner',  'EventWinnerController@addWinner')->name('winner.post');
+    Route::post('/send-email',  'EmailController@sendEmail')->name('sertif.send');
     Route::delete('/user/{user}',  'AdminController@userDestroy')->name('user.destroy');
     Route::delete('/eventuser/{eventuser}',  'AdminController@eventUserDestroy')->name('eventuser.destroy');
     Route::delete('/karya/{post}',  'PostController@destroy')->name('post.destroy');

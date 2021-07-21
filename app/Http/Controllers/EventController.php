@@ -42,7 +42,8 @@ class EventController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'instagram_embed' => 'required'
+            'instagram_embed' => 'required',
+            'level' => 'required'
         ]);
 
         Event::create($request->all());

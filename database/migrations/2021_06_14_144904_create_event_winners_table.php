@@ -17,10 +17,13 @@ class CreateEventWinnersTable extends Migration
             $table->id();
             $table->foreignId('announcement_id')->constrained('announcements')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('name');
+            $table->string('email');
             $table->string('title');
             $table->string('grade');
             $table->string('instagram');
             $table->string('institution')->nullable();
+            $table->string('sertif_name')->nullable();
+            $table->integer('sertif_status')->default(0);
             $table->timestamps();
         });
     }

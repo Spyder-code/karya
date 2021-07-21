@@ -6,7 +6,7 @@ use App\Models\EventWinner;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class EventWinnerImport implements ToModel
+class EventWinnerImport implements ToModel, WithStartRow
 {
     private $id;
 
@@ -20,9 +20,12 @@ class EventWinnerImport implements ToModel
         return new EventWinner([
             'announcement_id' => $this->id,
             'name' => $row[1],
-            'title' => $row[2],
-            'instagram' => $row[3],
-            'grade' => $row[4],
+            'email' => $row[2],
+            'institution' => $row[3],
+            'title' => $row[4],
+            'instagram' => $row[5],
+            'grade' => $row[6],
+            'sertif_name' => $row[7],
         ]);
     }
 

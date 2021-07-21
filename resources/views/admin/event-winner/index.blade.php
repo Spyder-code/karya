@@ -72,8 +72,7 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Event</th>
-                                        <th scope="col">Note</th>
-                                        <th scope="col">Jury note</th>
+                                        <th scope="col">Jumlah Peserta</th>
                                         <th scope="col">Created at</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
@@ -83,8 +82,7 @@
                                     <tr>
                                         <td scope="row">{{ $loop->iteration }}</td>
                                         <td>{{ $item->event->name }}</td>
-                                        <td>{{ Str::substr($item->note, 0, 200,'...') }}</td>
-                                        <td>{{ Str::substr($item->jury_note, 0, 200,'...') }}</td>
+                                        <td>{{ $item->eventWinner->count() }}</td>
                                         <td>{{ date('d F Y',strtotime($item->created_at)) }}</td>
                                         <td class="d-flex">
                                             <a href="{{ route('event-winner.edit',['event_winner' => $item->id]) }}" data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-primary mx-1" ><i class="fas fa-pencil-alt"></i></a>

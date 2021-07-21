@@ -19,7 +19,7 @@
             <div class="customize-input float-right">
                 <div
                     class="custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
-                    <?php echo date("M d"); ?>
+                    {{ date("M d") }}
                 </div>
             </div>
         </div>
@@ -34,6 +34,16 @@
             <strong>{{ $message }}</strong>
         </div>
     </div>
+</div>
+@endif
+
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
 </div>
 @endif
 
@@ -54,13 +64,48 @@
                 </div>
             </div>
         </div>
+        <div class="card border-right">
+            <div class="card-body">
+                <div class="d-flex d-lg-flex d-md-block align-items-center">
+                    <div>
+                        <div class="d-inline-flex align-items-center">
+                            <h2 class="text-dark mb-1 font-weight-medium">{{ $sertif_success_send }}</h2>
+                        </div>
+                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Total Sertif Terkirim</h6>
+                    </div>
+                    <div class="ml-auto mt-md-3 mt-lg-0">
+                        <span class="opacity-7 text-muted"><i data-feather="users"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-right">
+            <div class="card-body">
+                <div class="d-flex d-lg-flex d-md-block align-items-center">
+                    <div>
+                        <div class="d-inline-flex align-items-center">
+                            <h2 class="text-dark mb-1 font-weight-medium">{{ $sertif_fail_send }}</h2>
+                        </div>
+                        <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Total Sertif Belum Terkirim</h6>
+                    </div>
+                    <div class="ml-auto mt-md-3 mt-lg-0">
+                        <span class="opacity-7 text-muted"><i data-feather="users"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    <button data-toggle="modal" data-target="#exampleModal" class="btn btn-success"><i class="fas fa-plus"></i> Add Winner</button>
+                <div class="card-header d-flex">
+                    <button data-toggle="modal" data-target="#exampleModal" class="btn btn-success mr-5"><i class="fas fa-plus"></i> Add Winner</button>
+                    <form class="forms-sample" action="{{ route('sertif.send') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="announcement_id" value="{{ $announcement->id }}">
+                        <button type="submit" class="btn btn-primary mr-2" onclick="return confirm('Are yu sure')"><i class="fas fa-envelope"></i> Kirim sertif via Email</button>
+                    </form>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -72,10 +117,9 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Title</th>
-                                        <th scope="col">Instagram</th>
-                                        <th scope="col">Institution</th>
+                                        <th scope="col">Email</th>
                                         <th scope="col">Grade</th>
+                                        <th scope="col">Status Sertif</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -84,10 +128,19 @@
                                     <tr>
                                         <td scope="row">{{ $loop->iteration }}</td>
                                         <td>{{ $item->name }}</td>
-                                        <td>{{ $item->title }}</td>
-                                        <td>{{ $item->instagram }}</td>
-                                        <td>{{ $item->institution }}</td>
+                                        <td>{{ $item->email }}</td>
                                         <td>{{ $item->grade }}</td>
+                                        <td>
+                                            @if ($item->sertif_status==0)
+                                                <div class="alert alert-danger">
+                                                    <strong>Email Belum terkirim</strong>
+                                                </div>
+                                            @else
+                                                <div class="alert alert-success">
+                                                    <strong>Email Berhasil terkirim</strong>
+                                                </div>
+                                            @endif
+                                        </td>
                                         <td class="d-flex">
                                             <button data-toggle="modal" data-target="#modalUpdate-{{ $item->id }}" data-placement="bottom" title="Edit" class="btn btn-primary mx-1" ><i class="fas fa-pencil-alt"></i></button>
                                             <form action="{{ route('winner.destroy',['winner'=>$item->id]) }}" method="post">
@@ -115,6 +168,10 @@
                                                         <div class="form-group">
                                                             <label>Name</label>
                                                             <input type="text" value="{{ $item->name }}" name="name" class="form-control">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Email</label>
+                                                            <input type="text" value="{{ $item->email }}" name="email" class="form-control">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Title</label>
@@ -157,7 +214,7 @@
 <!-- Modal add-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <form action="{{ route('winner.post') }}" method="post">
+        <form action="{{ route('winner.post') }}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="announcement_id" value="{{ $announcement->id }}">
             <div class="modal-content">
@@ -170,23 +227,31 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" name="email" class="form-control" value="{{ old('email') }}">
                     </div>
                     <div class="form-group">
                         <label>Title</label>
-                        <input type="text" name="title" class="form-control">
+                        <input type="text" name="title" class="form-control" value="{{ old('title') }}">
                     </div>
                     <div class="form-group">
                         <label>Instagram</label>
-                        <input type="text" name="instagram" class="form-control">
+                        <input type="text" name="instagram" class="form-control" value="{{ old('instagram') }}">
                     </div>
                     <div class="form-group">
                         <label>Institution</label>
-                        <input type="text" name="institution" class="form-control">
+                        <input type="text" name="institution" class="form-control" value="{{ old('institution') }}">
                     </div>
                     <div class="form-group">
                         <label>Grade</label>
-                        <input type="text" name="grade" class="form-control">
+                        <input type="text" name="grade" class="form-control" value="{{ old('grade') }}">
+                    </div>
+                    <div class="form-group">
+                        <label>Setifikat (.pdf)</label><br>
+                        <input type="file" name="file" value="{{ old('file') }}">
                     </div>
                 </div>
                 <div class="modal-footer">

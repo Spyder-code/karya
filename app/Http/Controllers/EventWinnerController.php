@@ -46,12 +46,19 @@ class EventWinnerController extends Controller
             'note' => 'required',
             'jury_note' => 'required',
             'jury_note' => 'required',
+            'file' => 'required|max:2048',
+            'file.*' => 'required|max:2048',
         ]);
 
         $data = Announcement::create($request->all());
-
+        $event = Event::find($request->event_id);
         if($request->file('excel')){
             Excel::import(new EventWinnerImport($data->id), $request->excel);
+            $files = $request->file('file');
+            foreach ($files as $item ) {
+                $fileName = $item->getClientOriginalName();
+                $item->move('sertif/'.$event->name, $fileName);
+            }
         }
             return redirect()->route('event-winner.index')->with('success','Data berhasil disimpan!');
     }
@@ -65,8 +72,10 @@ class EventWinnerController extends Controller
     public function show(Announcement $event_winner)
     {
         $data = EventWinner::all()->where('announcement_id',$event_winner->id);
+        $sertif_success_send = EventWinner::all()->where('announcement_id',$event_winner->id)->where('sertif_status',1)->count();
+        $sertif_fail_send = EventWinner::all()->where('announcement_id',$event_winner->id)->where('sertif_status',0)->count();
         $announcement = $event_winner;
-        return view('admin.event-winner.show',compact('data','announcement'));
+        return view('admin.event-winner.show',compact('data','announcement','sertif_success_send','sertif_fail_send'));
     }
 
     /**
@@ -117,13 +126,19 @@ class EventWinnerController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'email' => 'required|email',
             'title' => 'required',
             'instagram' => 'required',
             'institution' => 'required',
             'grade' => 'required',
+            'file' => 'required|mimes:pdf|max:2048',
         ]);
+        $announcement = Announcement::find($request->announcement_id);
+        $fileName = $request->name.'.'.$request->file->extension();
+        $data = array_merge($request->all(),['sertif_name' => $fileName]);
+        $request->file->move('sertif/'.$announcement->event->name, $fileName);
+        $data = EventWinner::create($data);
 
-        EventWinner::create($request->all());
         return back()->with('success','Data berhasil disimpan!');
     }
 
@@ -131,6 +146,7 @@ class EventWinnerController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'email' => 'required|email',
             'title' => 'required',
             'instagram' => 'required',
             'institution' => 'required',
